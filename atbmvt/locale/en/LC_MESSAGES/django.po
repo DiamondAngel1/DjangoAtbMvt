@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: atbmvt\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# ---------------------------
+# АВТОРИЗАЦІЯ / КОРИСТУВАЧІ
+# ---------------------------
+
+msgid "Увійти"
+msgstr "Login"
+
+msgid "Вийти"
+msgstr "Logout"
+
+msgid "Реєстрація"
+msgstr "Registration"
+
+msgid "Зареєструватися"
+msgstr "Sign up"
+
+msgid "Пароль"
+msgstr "Password"
+
+msgid "Підтвердження пароля"
+msgstr "Confirm password"
+
+msgid "Електронна пошта"
+msgstr "Email"
+
+msgid "Ім'я"
+msgstr "Name"
+
+msgid "Прізвище"
+msgstr "Surname"
+
+msgid "Профіль"
+msgstr "Profile"
+
+msgid "Фотографія профілю"
+msgstr "Profile photo"
+
+msgid "Мій профіль"
+msgstr "My profile"
+
+msgid "Редагувати профіль"
+msgstr "Edit profile"
+
+msgid "Користувач"
+msgstr "User"
+
+msgid "Користувачі"
+msgstr "Users"
+
+msgid "Створити користувача"
+msgstr "Create user"
+
+msgid "Оновити користувача"
+msgstr "Update user"
+
+msgid "Видалити користувача"
+msgstr "Delete user"
+
+msgid "Користувача успішно створено"
+msgstr "User created successfully"
+
+msgid "Користувача успішно оновлено"
+msgstr "User updated successfully"
+
+msgid "Користувача успішно видалено"
+msgstr "User deleted successfully"
+
+# ---------------------------
+# КАТЕГОРІЇ
+# ---------------------------
+
+msgid "Категорія"
+msgstr "Category"
+
+msgid "Категорії"
+msgstr "Categories"
+
+msgid "Створити категорію"
+msgstr "Create category"
+
+msgid "Редагувати категорію"
+msgstr "Edit category"
+
+msgid "Видалити категорію"
+msgstr "Delete category"
+
+msgid "Назва категорії"
+msgstr "Category name"
+
+msgid "Опис категорії"
+msgstr "Category description"
+
+msgid "Зображення категорії"
+msgstr "Category image"
+
+msgid "Категорію успішно створено"
+msgstr "Category created successfully"
+
+msgid "Категорію успішно оновлено"
+msgstr "Category updated successfully"
+
+msgid "Категорію успішно видалено"
+msgstr "Category deleted successfully"
+
+# ---------------------------
+# ТОВАРИ
+# ---------------------------
+
+msgid "Товар"
+msgstr "Product"
+
+msgid "Товари"
+msgstr "Products"
+
+msgid "Створити товар"
+msgstr "Create product"
+
+msgid "Редагувати товар"
+msgstr "Edit product"
+
+msgid "Видалити товар"
+msgstr "Delete product"
+
+msgid "Назва товару"
+msgstr "Product name"
+
+msgid "Опис товару"
+msgstr "Product description"
+
+msgid "Ціна"
+msgstr "Price"
+
+msgid "Кількість"
+msgstr "Quantity"
+
+msgid "Зображення"
+msgstr "Image"
+
+msgid "Завантажити зображення"
+msgstr "Upload image"
+
+msgid "Товар успішно створено"
+msgstr "Product created successfully"
+
+msgid "Товар успішно оновлено"
+msgstr "Product updated successfully"
+
+msgid "Товар успішно видалено"
+msgstr "Product deleted successfully"
+
+# ---------------------------
+# КНОПКИ / ІНТЕРФЕЙС
+# ---------------------------
+
+msgid "Зберегти"
+msgstr "Save"
+
+msgid "Скасувати"
+msgstr "Cancel"
+
+msgid "Надіслати"
+msgstr "Submit"
+
+msgid "Оновити"
+msgstr "Update"
+
+msgid "Видалити"
+msgstr "Delete"
+
+msgid "Створити"
+msgstr "Create"
+
+msgid "Назад"
+msgstr "Back"
+
+msgid "Далі"
+msgstr "Next"
+
+msgid "Попередній"
+msgstr "Previous"
+
+msgid "Дії"
+msgstr "Actions"
+
+msgid "Пошук"
+msgstr "Search"
+
+msgid "Фільтр"
+msgstr "Filter"
+
+msgid "Завантажити"
+msgstr "Upload"
+
+msgid "Вибрати файл"
+msgstr "Choose file"
+
+# ---------------------------
+# ПОМИЛКИ / ВАЛІДАЦІЯ
+# ---------------------------
+
+msgid "Це поле є обов'язковим."
+msgstr "This field is required."
+
+msgid "Невірне значення."
+msgstr "Invalid value."
+
+msgid "Назва має бути довшою за 4 символи."
+msgstr "Name must be at least 4 characters long."
+
+msgid "Паролі не співпадають."
+msgstr "Passwords do not match."
+
+msgid "Невірний email або пароль."
+msgstr "Invalid email or password."
+
+msgid "У вас немає прав для виконання цієї дії."
+msgstr "You do not have permission to perform this action."
+
+# ---------------------------
+# СИСТЕМА / НАВІГАЦІЯ
+# ---------------------------
+
+msgid "Головна"
+msgstr "Home"
+
+msgid "Панель керування"
+msgstr "Dashboard"
+
+msgid "Налаштування"
+msgstr "Settings"
+
+msgid "Мова"
+msgstr "Language"
+
+msgid "Виберіть мову"
+msgstr "Select language"
+
+msgid "Українська"
+msgstr "Ukrainian"
+
+msgid "Англійська"
+msgstr "English"
+
+msgid "Португальська"
+msgstr "Portuguese"
+
+msgid "Завантаження..."
+msgstr "Loading..."
+
+msgid "Нічого не знайдено"
+msgstr "No results found"
+
+msgid "Ви впевнені?"
+msgstr "Are you sure"
+
+msgid "Підтвердити"
+msgstr "Confirm"
+
+msgid "Успіх"
+msgstr "Success"
+
+msgid "Помилка"
+msgstr "Error"

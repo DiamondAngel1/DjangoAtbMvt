@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load i18n %}
+    <h1 class="text-center mb-4">
+        {% trans "Створити категорію" %}
+    </h1>
+    <form class="w-50 mx-auto p-4 border rounded shadow-sm bg-light" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="form-group mb-3">
+            <label class="form-label">
+                {{ form.name.label }}
+            </label>
+            {{ form.name }}
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label">
+                {{ form.description.label }}
+            </label>
+            {{ form.description }}
+        </div>
+
+        <div class="form-group mb-4">
+            <label class="form-label">
+                {{ form.image.label }}
+            </label>
+            {{ form.image }}
+        </div>
+        <button type="submit" class="btn btn-primary w-100">
+        {% trans "Зберегти" %}
+    </button>
+    </form>
+{% endblock %}
