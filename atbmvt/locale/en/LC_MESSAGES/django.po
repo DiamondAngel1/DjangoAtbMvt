@@ -33,6 +33,9 @@ msgstr "Email"
 msgid "Ім'я"
 msgstr "Name"
 
+msgid "Логін"
+msgstr "Login"
+
 msgid "Прізвище"
 msgstr "Surname"
 

@@ -1,6 +1,6 @@
 from django import forms
 from .models import CustomUser
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, SetPasswordForm, UserCreationForm, PasswordResetForm as DjangoPasswordResetForm
 from django.utils.translation import gettext_lazy as _
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(
@@ -61,4 +61,36 @@ class CustomUserCreationForm(UserCreationForm):
     #     if commit:
     #         user.save()
     #     return user
+
+class CustomUserLoginForm(AuthenticationForm):
+    username = forms.CharField(
+        max_length=254,
+        label=_('Логін'),
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+    password = forms.CharField(
+        max_length=150,
+        label=_('Пароль'),
+        widget=forms.PasswordInput(attrs={'class': 'form-control'})
+    )
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'password')
+
+class PasswordResetForm(DjangoPasswordResetForm):
+    email = forms.EmailField(
+        max_length=254,
+        label=_('Електронна пошта'),
+        widget=forms.EmailInput(attrs={'class': 'form-control'})
+    )
+
+class ChangePasswordForm(SetPasswordForm):
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(user, *args, **kwargs)
+        self.fields['new_password1'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введіть новий пароль'})
+        self.fields['new_password2'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Повторіть новий пароль'})
+
+
+
     
+        

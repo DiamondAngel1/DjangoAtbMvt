@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomUserLoginForm
 from django.contrib import messages
+from django.contrib.auth import login, authenticate, logout
 
 # Create your views here.
 def register(request):
@@ -17,6 +18,7 @@ def register(request):
                     user.image_medium = image
                     user.image_large = image
                 user.save()
+                login(request, user)
                 return redirect('home')
             except Exception as e:
                 messages.error(request, f'Помилка реєстрації: {e}')
@@ -27,3 +29,23 @@ def register(request):
         form = CustomUserCreationForm()
         
     return render(request, 'register.html', {'form': form})
+
+def user_login(request):
+    if request.method == 'POST':
+        form = CustomUserLoginForm(request, data=request.POST)
+        if form.is_valid():
+            user = authenticate(request, username=form.cleaned_data['username'], 
+                                password=form.cleaned_data['password'])
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+        else:
+            messages.error(request, 'Невірний логін або пароль.')
+    else:
+        form = CustomUserLoginForm()
+        
+    return render(request, 'login.html', {'form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')

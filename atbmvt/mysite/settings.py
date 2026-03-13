@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'categories',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'templates',
+            BASE_DIR / 'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -156,3 +157,11 @@ DJANGORESIZED_DEFAULT_KEEP_META = True
 DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'WEBP'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'WEBP': ".webp"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.ukr.net'
+EMAIL_PORT = 2525 
+EMAIL_USE_SSL = True 
+EMAIL_HOST_USER = 'siuzannat@ukr.net'
+EMAIL_HOST_PASSWORD = 'LNaTqhzTL7ffFN14'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

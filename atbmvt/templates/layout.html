@@ -60,12 +60,22 @@
                                 </ul>
                             </li>
                         </ul>
-
+                        {% if user.is_authenticated %}
+                        <ul class="navbar-nav ms-auto mb-2 mb-md-0"> 
+                            <li class="nav-item"> 
+                                <a class="nav-link" href="/users/logout">{% trans "Вийти" %}</a> 
+                            </li>
+                        </ul>
+                        {% else %}
                         <ul class="navbar-nav ms-auto mb-2 mb-md-0"> 
                             <li class="nav-item"> 
                                 <a class="nav-link" href="/users/register">{% trans "Зареєструватися" %}</a> 
                             </li>
+                            <li class="nav-item"> 
+                                <a class="nav-link" href="/users/login">{% trans "Увійти" %}</a> 
+                            </li>
                         </ul>
+                        {% endif %}
                     </div> 
                 </div> 
             </nav> 
