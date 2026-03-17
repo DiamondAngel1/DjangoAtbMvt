@@ -30,6 +30,7 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('categories/', include('categories.urls')),
+    path('products/', include('products.urls')),
     path('', views.homepage, name='home'),
 )
 
