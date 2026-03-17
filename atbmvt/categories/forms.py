@@ -17,6 +17,15 @@ class CategoryCreateForm(forms.ModelForm):
             'rows': 4
         })
     )
+    slug = forms.SlugField(
+        max_length=225,
+        required=False,
+        label=_('Slug категорії'),
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': _('Введіть slug категорії')
+        })
+    )
     image = forms.ImageField(
         required=False,
         label=_('Зображення категорії'),
@@ -27,7 +36,7 @@ class CategoryCreateForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ['name', 'description', 'image']
+        fields = ['name', 'description', 'image', 'slug']
 
     def clean_name(self):
         name = self.cleaned_data['name']

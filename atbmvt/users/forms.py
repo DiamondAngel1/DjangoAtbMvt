@@ -2,6 +2,7 @@ from django import forms
 from .models import CustomUser
 from django.contrib.auth.forms import AuthenticationForm, SetPasswordForm, UserCreationForm, PasswordResetForm as DjangoPasswordResetForm
 from django.utils.translation import gettext_lazy as _
+
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(
         max_length=150, 
