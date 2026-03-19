@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ProductImage
+from .models import ProductImage, Product
 from django.views.decorators.csrf import csrf_exempt
 from .forms import ProductForm
 from PIL import Image
@@ -11,15 +11,88 @@ from django.shortcuts import redirect
 import json
 import uuid
 
+def products_list(request):
+    products = Product.objects.prefetch_related('images').all()
+    return render(request, 'products_list.html', {'products': products})
+
 def add_product(request):
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
+
+    if request.method == "POST":
+        form = ProductForm(request.POST)
+        images_ids = request.POST.getlist('images')
         if form.is_valid():
-            return redirect('home')
+            product = form.save()
+
+            for idx, img_id in enumerate(images_ids):
+                img = ProductImage.objects.get(id=img_id)
+                img.product = product
+                img.priority = idx
+                img.save()
+
+            return redirect("products:products_list")
     else:
         form = ProductForm()
 
-    return render(request, 'add_product.html', {'form': form})
+    return render(request, "add_product.html", {"form": form})
+
+def delete_product(_, product_id):
+    try:
+        product = Product.objects.get(id=product_id)
+
+        for img in product.images.all():
+            img.delete()
+
+        product.delete()
+
+    except Product.DoesNotExist:
+        pass
+    return redirect('products:products_list')
+
+def edit_product(request, product_id):
+    try:
+        product = Product.objects.get(id=product_id)
+    except Product.DoesNotExist:
+        return redirect('products:products_list')
+
+    if request.method == "POST":
+        form = ProductForm(request.POST, instance=product)
+
+        delete_id = request.POST.get("delete_image")
+        if delete_id:
+            try:
+                img = ProductImage.objects.get(id=delete_id, product=product)
+                img.delete()
+            except ProductImage.DoesNotExist:
+                pass
+            return redirect("products:edit_product", product_id=product.id)
+
+        if form.is_valid():
+            product.save()
+            for pi in product.images.all():
+                new_priority = request.POST.get(f"priority_{pi.id}")
+                if new_priority is not None:
+                    try:
+                        pi.priority = int(new_priority)
+                        pi.save()
+                    except ValueError:
+                        pass
+
+            images_ids = request.POST.getlist('images')
+            for idx, img_id in enumerate(images_ids):
+                if not img_id:
+                    continue
+                try:
+                    img = ProductImage.objects.get(id=img_id)
+                    img.product = product
+                    img.priority = idx
+                    img.save()
+                except (ProductImage.DoesNotExist, ValueError):
+                    continue
+            return redirect("products:products_list")
+    else:
+        form = ProductForm(instance=product)
+
+    return render(request, "edit_product.html", {"form": form, "product": product})
 
 @csrf_exempt
 def upload_temp_image(request):

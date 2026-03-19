@@ -88,6 +88,9 @@ msgstr "Categories"
 msgid "Створити категорію"
 msgstr "Create category"
 
+msgid "Слаг"
+msgstr "Slug"
+
 msgid "Редагувати категорію"
 msgstr "Edit category"
 
@@ -122,7 +125,7 @@ msgstr "Product"
 msgid "Товари"
 msgstr "Products"
 
-msgid "Створити товар"
+msgid "Додати продукт"
 msgstr "Create product"
 
 msgid "Редагувати товар"
@@ -131,11 +134,14 @@ msgstr "Edit product"
 msgid "Видалити товар"
 msgstr "Delete product"
 
-msgid "Назва товару"
+msgid "Назва продукту"
 msgstr "Product name"
 
-msgid "Опис товару"
+msgid "Опис продукту"
 msgstr "Product description"
+
+msgid "Створити продукт"
+msgstr "Create product"
 
 msgid "Ціна"
 msgstr "Price"
